@@ -38,7 +38,6 @@ fibs = (
     17711, 28657, 46368, 75025, 121393, 196418, 317811
 )
 
-
 def numseq_importer(module_name):
     """Helper function to perform import of a numseq module"""
     to_import = numseq_root + '.' + module_name
@@ -57,7 +56,7 @@ class TestNumseq(unittest.TestCase):
         fib = numseq_importer('fib')
         self.assertIsInstance(fib, types.ModuleType, fib)
         # just test first 30 terms
-        for n, f in enumerate(fibs):
+        for n, _ in enumerate(fibs):
             self.assertEqual(fib.fib(n), fibs[n], 'The Fibonacci terms are incorrect')
 
     # def test_fib_performance(self):
